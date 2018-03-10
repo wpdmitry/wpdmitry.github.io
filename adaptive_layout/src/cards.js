@@ -104,7 +104,7 @@ function getHTMLCards(data) {
 
 function getHTMLButtons() {
     return `
-            <img src="img/Actions.png" class="actions">
-            <img src="img/Heart.png" class="heart">   
+            <img src="../img/Actions.png" class="actions">
+            <img src="../img/Heart.png" class="heart">   
     `
 }

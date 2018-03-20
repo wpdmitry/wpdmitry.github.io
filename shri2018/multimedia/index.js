@@ -21,11 +21,11 @@ class Robot {
     }
     start() {
         this.workTime = 0;
-        this.charge = 120 * 1000;
+        this.charge = 180 * 1000;
         this.prevTime = 0;
 
         this.audioSrc.connect(this.analyser);
-        this.analyser.connect(this.audioCtx.destination);
+        // this.analyser.connect(this.audioCtx.destination);
 
         this.loop();
     }

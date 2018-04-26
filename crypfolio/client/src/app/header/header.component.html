@@ -1,0 +1,24 @@
+<mat-toolbar class="header">
+  <div class="header__title">
+    <a routerLink="/" mat-button>
+      <mat-icon>business_center</mat-icon>
+      <span class="title">{{ title }}</span>
+    </a>
+  </div>
+
+  <div class="header__spacer"></div>
+
+  <div class="header__navigation">
+    <app-navigation></app-navigation>
+  </div>
+
+  <div class="header__profile">
+    <button mat-button="" [matMenuTriggerFor]="menu">
+      <mat-icon>account_box</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" class="menu">
+      <app-profile></app-profile>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+

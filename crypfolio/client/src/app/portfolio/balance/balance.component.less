@@ -1,0 +1,31 @@
+@import "params";
+
+.balance {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-content: center;
+  height: 100px;
+  font-size: 2rem;
+  text-align: center;
+
+  @media @mobile {
+    font-size: 1.3rem;
+  }
+
+  &__total,
+  &__diff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}

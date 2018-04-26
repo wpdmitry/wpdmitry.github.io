@@ -1,0 +1,24 @@
+<div class="profile" *ngIf="user$ | async">
+  <div class="profile__info">
+    <div class="profile__login">
+      <mat-icon>person</mat-icon>{{ (user$ | async).login }}
+    </div>
+
+    <div (click)="onSignOut()" class="profile__exit">
+      <button mat-button>Выйти <mat-icon>exit_to_app</mat-icon></button>
+    </div>
+  </div>
+
+  <div class="profile__current-currency">
+    <mat-form-field>
+      <mat-select placeholder="Текущая валюта">
+        <mat-option [value]="'RUB'">
+          RUB
+        </mat-option>
+        <mat-option [value]="'USD'">
+          USD
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

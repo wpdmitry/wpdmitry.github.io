@@ -1,0 +1,94 @@
+@import "params";
+
+.form {
+  margin-top: 40px;
+
+  &__price {
+    //grid-column: span 2;
+    font-size: 1.1rem;
+    grid-area: price;
+  }
+
+  &__select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //grid-column: span 2;
+    grid-area: select;
+  }
+
+  &__amount {
+    //grid-column: span 2;
+    font-size: 1.1rem;
+    grid-area: amount;
+  }
+
+  &__status {
+    //grid-column: span 2;
+    justify-self: center;
+    align-self: center;
+    grid-area: status;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //grid-column-start: 2;
+    //grid-column-end: 4;
+    grid-area: button;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    //grid-template-rows: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+    grid-template-areas: 'price select '
+                         'amount status'
+                         'button button';
+
+    @media @mobile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      justify-content: center;
+      grid-template-areas: 'select status'
+                           'price price'
+                           'amount amount'
+                           'button button';
+    }
+  }
+}
+
+.button {
+  width: 30%;
+  padding: 3px;
+
+  @media @mobile {
+    font-size: 1.1rem;
+    padding: 5px;
+  }
+}
+
+.select {
+  width: 50%;
+
+  @media @mobile {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+}
+
+.status {
+  @media @mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    font-size: 1.1rem;
+  }
+}

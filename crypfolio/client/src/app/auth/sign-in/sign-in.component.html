@@ -1,0 +1,35 @@
+<mat-card class="sign-in">
+  <mat-card-content class="sign-in__content">
+    <form [formGroup]="form"
+          class="sign-in__form"
+          (submit)="onSubmit()">
+
+      <mat-form-field>
+        <input matInput
+               type="text"
+               formControlName="login"
+               placeholder="Логин"
+               required>
+        <mat-error>{{ form.get('login').errors }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+               type="password"
+               formControlName="password"
+               placeholder="Пароль"
+               required>
+        <mat-error>{{ form.get('password').errors }}</mat-error>
+      </mat-form-field>
+
+      <div class="sign-in__button">
+        <button class="button"
+                [disabled]="!form.valid"
+                mat-raised-button="">
+          Войти
+        </button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>

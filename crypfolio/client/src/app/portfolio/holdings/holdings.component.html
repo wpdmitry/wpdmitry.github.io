@@ -1,0 +1,60 @@
+<div class="holdings">
+  <mat-card class="holdings__header">
+    <div>Валюта</div>
+    <div>Активы</div>
+    <div>Цена</div>
+  </mat-card>
+
+  <div class="holdings__content">
+    <mat-accordion class="holdings__accordion">
+      <mat-expansion-panel
+        *ngFor="let holding of holdings$ | async"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+
+        <mat-expansion-panel-header class="holdings__holding">
+          <mat-panel-title class="holdings__title">
+            <div class="holding">
+              <div class="holding__currency">
+                <img src="{{ holding.coinIcon }}" alt="">
+                <div>{{ holding.pairName }}</div>
+              </div>
+
+              <div class="holding__actives">
+                <div>{{ holding.totalCost | rouding }}</div>
+                <div>{{ holding.totalAmount | rouding}}</div>
+              </div>
+
+              <div class="holding__price">
+                <div>{{ holding.currentPrice | rouding}}</div>
+                <div appPortfolio [trend]="holding.totalDiffCost">
+                  {{ holding.totalDiffCost  | rouding | sign}}
+                </div>
+              </div>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-list *ngFor="let batch of holding.batches" class="batch">
+          <mat-list-item class="batch__item">
+            <mat-icon class="icon">access_time</mat-icon> {{ batch.date | customDate }}
+          </mat-list-item>
+
+          <mat-list-item class="batch__item">
+            <div>
+              <div>{{ batch.cost | rouding }}</div>
+              <div>{{ batch.amount | rouding }}</div>
+            </div>
+          </mat-list-item>
+
+          <mat-list-item class="batch__item">
+            <div>
+              <div>{{ batch.price | rouding}}</div>
+              <div appPortfolio [trend]="batch.diffCost">{{ batch.diffCost | rouding | sign }}</div>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

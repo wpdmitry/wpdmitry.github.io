@@ -1,0 +1,41 @@
+@import "params";
+
+.header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__spacer {
+    flex-grow: 1;
+  }
+
+  &__navigation {
+
+  }
+
+  &__profile {
+    > button {
+      @media @mobile {
+        padding: 0;
+        min-width: 40px;
+        max-width: 40px;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 1.3rem;
+}
+
+::ng-deep .menu {
+  max-width: 300px !important;
+  //height: 200px;
+  width: 400px !important;
+}

@@ -1,0 +1,30 @@
+@import "params.less";
+.navigation {
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    color: black;
+    transform: scale(1.1);
+    margin-right: 10px;
+  }
+
+  &__link {
+
+    @media @mobile {
+      padding: 0;
+      min-width: 40px !important;
+      max-width: 40px !important;
+    }
+  }
+}
